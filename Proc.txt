@@ -1,0 +1,154 @@
+Here is the **simplest AF guide** to start using **Docker**.
+No confusion, no extra theory — just basics that actually work.
+
+---
+
+# ✅ **1. Install Docker**
+
+Download from here:
+[https://www.docker.com/products/docker-desktop/](https://www.docker.com/products/docker-desktop/)
+
+Install → Open Docker Desktop → Done.
+
+---
+
+# ✅ **2. Check if Docker works**
+
+Open terminal / CMD:
+
+```
+docker --version
+```
+
+and
+
+```
+docker run hello-world
+```
+
+If it prints “Hello from Docker!”, you're ready.
+
+---
+
+# ✅ **3. Run ANY app in Docker**
+
+Example: run an Ubuntu container:
+
+```
+docker run -it ubuntu
+```
+
+You are now *inside* Ubuntu.
+
+Exit:
+
+```
+exit
+```
+
+---
+
+# ✅ **4. Run a Python app in Docker**
+
+```
+docker run -it python
+```
+
+This gives you a Python shell inside a container.
+
+---
+
+# ✅ **5. Build your own Docker image**
+
+Create a folder:
+
+```
+mkdir myapp && cd myapp
+```
+
+Make a simple Python file:
+
+**app.py**
+
+```python
+print("Hello from Docker!")
+```
+
+Make a **Dockerfile**:
+
+```dockerfile
+FROM python
+COPY app.py .
+CMD ["python","app.py"]
+```
+
+Build it:
+
+```
+docker build -t myapp .
+```
+
+Run it:
+
+```
+docker run myapp
+```
+
+✅ Output:
+
+```
+Hello from Docker!
+```
+
+---
+
+# ✅ **6. See running containers**
+
+```
+docker ps
+```
+
+See stopped + running:
+
+```
+docker ps -a
+```
+
+---
+
+# ✅ **7. Stop a container**
+
+```
+docker stop CONTAINER_ID
+```
+
+---
+
+# ✅ **8. Remove a container/image**
+
+Remove container:
+
+```
+docker rm CONTAINER_ID
+```
+
+Remove image:
+
+```
+docker rmi IMAGE_NAME
+```
+
+---
+
+# ✅ Docker in 1 sentence
+
+Docker = runs your apps inside small isolated environments called **containers**.
+
+---
+
+If you want, I can give you:
+✅ a **simple Flask app in Docker**
+✅ a **simple Node.js / Java / C app in Docker**
+✅ a **simple Docker Compose file**
+
+Just tell me which one.
